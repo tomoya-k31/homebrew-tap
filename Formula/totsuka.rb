@@ -10,9 +10,9 @@ class Totsuka < Formula
   # `brew audit --strict` calls the explicit `version` redundant with the one
   # it scans out of the URL; that is the trade taken here, deliberately, in
   # exchange for the automation never touching a URL string.
-  version "0.10.1"
+  version "0.10.2"
   url "https://github.com/tomoya-k31/totsuka/releases/download/v#{version}/totsuka-v#{version}-macos-universal.tar.gz"
-  sha256 "c557062621608ca621ca48f73434bb1a193250b3e068518225e06982f07c7cee"
+  sha256 "355b726fdad7634865d03d3b8edb46909a6d05acf4fedb1bdf78b24407b8d190"
   license "MIT"
 
   # macOS only: the notifier plugin drives osascript, secrets default to the
