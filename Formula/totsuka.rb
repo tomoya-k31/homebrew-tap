@@ -42,6 +42,12 @@ class Totsuka < Formula
     # in alongside it.
     bin.install "totsuka"
     (libexec/"totsuka").install "plugins"
+
+    # The menu bar app (totsuka ADR-0109), from v0.11 on. Files a formula
+    # installs carry no quarantine attribute, which is what lets this
+    # ad-hoc-signed, un-notarized app open without a Gatekeeper prompt — a cask
+    # would not get that. The guard keeps a tarball without the app installable.
+    prefix.install "Totsuka.app" if File.exist?("Totsuka.app")
     doc.install "README.md", "LICENSE"
 
     # `totsuka completion <shell>` writes to stdout and is short-circuited
@@ -58,6 +64,11 @@ class Totsuka < Formula
 
       setup never handles secret values — it prints one ready-to-paste command
       per secret and finishes by running `totsuka doctor`.
+
+      The menu bar app (when this release includes it) is at
+        #{opt_prefix}/Totsuka.app
+      To open it from Spotlight and Launchpad:
+        ln -sf #{opt_prefix}/Totsuka.app ~/Applications/Totsuka.app
     CAVEATS
   end
 
