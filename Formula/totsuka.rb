@@ -67,7 +67,7 @@ class Totsuka < Formula
 
       The menu bar app is at #{opt_prefix}/Totsuka.app. To open it from
       Spotlight and Launchpad:
-        ln -sf #{opt_prefix}/Totsuka.app ~/Applications/Totsuka.app
+        mkdir -p ~/Applications && ln -sf #{opt_prefix}/Totsuka.app ~/Applications/Totsuka.app
     CAVEATS
   end
 
